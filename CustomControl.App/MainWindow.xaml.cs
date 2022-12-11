@@ -11,5 +11,12 @@ namespace CustomControl.App
         {
             InitializeComponent();
         }
+
+        
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+          
+        }
     }
 }

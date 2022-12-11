@@ -5,10 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
-        xmlns:cc="clr-namespace:CustomControl.Library;assembly=CustomControl.Library">
+        xmlns:cc="clr-namespace:CustomControl.Library;assembly=CustomControl.Library"
+        xmlns:vm="clr-namespace:CustomControl.App.ViewModels"
+        >
+       <Window.DataContext>
+           <vm:MainWindowViewModel/>
+       </Window.DataContext>
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         
-       
-        <cc:ButtonImage ImageSource="Images/plug.png" ImageHeight="100" ImageWidth="100"   Text="Click me!"/>
+       <Grid>
+           <Grid.RowDefinitions>
+               <RowDefinition/>
+               <RowDefinition/>
+               <RowDefinition/>
+               <RowDefinition/>
+               <RowDefinition/>
+           </Grid.RowDefinitions>
+           <cc:ButtonImage  
+               Click="ButtonBase_OnClick" 
+               Background="Black" FontSize="12" 
+               BorderThickness="2" 
+               BorderBrush="Firebrick"
+               Foreground="Aquamarine"
+               ImageSource="Images/plug.png" 
+               Command="{Binding TextImageCommand}"
+               Text="{Binding  TextImageButton}"  />
+       </Grid>
+        
     </Grid>
 </Window>
